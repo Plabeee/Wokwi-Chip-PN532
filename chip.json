@@ -1,0 +1,16 @@
+{
+  "name": "PN532 NFC/RFID",
+  "author": "Adafruit",
+  "pins": [
+    "SCL",
+    "SDA",
+    "IRQ",
+    "RST",
+    "REQ",
+    "GND",
+    "VCC",
+    "BTN1",
+    "BTN2",
+    ""
+  ]
+}
