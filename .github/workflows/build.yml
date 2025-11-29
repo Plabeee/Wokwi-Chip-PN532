@@ -4,14 +4,14 @@ name: Build Chip
 on:
   push:
   workflow_dispatch:
+# This permission is required for the action to create a GitHub Release
+permissions:
+  contents: write
 
 jobs:
   build:
     name: Build
     runs-on: ubuntu-22.04
-     # This permission is required for the action to create a GitHub Release
-    permissions:
-      contents: write
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -51,3 +51,5 @@ jobs:
           artifacts: chip.zip
           token: ${{ secrets.GITHUB_TOKEN }}
           generateReleaseNotes: true
+          # Allows the action to update the release you created in the web UI
+          allowUpdates: true
